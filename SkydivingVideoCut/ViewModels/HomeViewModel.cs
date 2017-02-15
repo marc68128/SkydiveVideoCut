@@ -17,7 +17,8 @@ namespace SkydivingVideoCut.ViewModels
         private string _videoPath;
         private Video _video;
         private long? _startFrame;
-        private long? _startTime;
+        private double? _startTime;
+        private bool _startFound;
 
         public HomeViewModel()
         {
@@ -43,7 +44,7 @@ namespace SkydivingVideoCut.ViewModels
                 OnPropertyChanged();
             }
         }
-        public long? StartTime
+        public double? StartTime
         {
             get { return _startTime; }
             set
@@ -52,8 +53,15 @@ namespace SkydivingVideoCut.ViewModels
                 OnPropertyChanged();
             }
         }
-
-
+        public bool StartFound
+        {
+            get { return _startFound; }
+            set
+            {
+                _startFound = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ActionCommand SelectVideoCommand { get; private set; }
         public ActionCommand AnalizeCommand { get; private set; }
@@ -80,7 +88,8 @@ namespace SkydivingVideoCut.ViewModels
             {
                 IsLoading = true;
                 StartFrame = await _visionService.GetStartFrame(_video);
-                StartTime = StartFrame / _video.FrameRate;
+                StartTime = StartFrame / (double)_video.FrameRate;
+                StartFound = StartTime.HasValue;
                 IsLoading = false; 
             }, false);
         }
