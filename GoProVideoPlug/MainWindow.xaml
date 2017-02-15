@@ -1,0 +1,51 @@
+﻿<Window x:Class="GoProVideoPlug.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoProVideoPlug"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" ></ColumnDefinition>
+            <ColumnDefinition Width="7*" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="#9090ff">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" MouseUp="NavigateToVideos">
+                <Image x:Name="VideoIcon" Source="/Images/playVideoIcon.png" Margin="15"></Image>
+                <StackPanel Height="1" Margin="10,0" HorizontalAlignment="Stretch" Background="White"></StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" MouseUp="NavigateToSdCard">
+                <Image x:Name="SdIcon" Source="/Images/carteSdIcon.png" Margin="15"></Image>
+                <!--<StackPanel Height="1" Margin="10,0" HorizontalAlignment="Stretch" Background="White"></StackPanel>-->
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" MouseUp="NavigateToSettings">
+                <StackPanel Height="1" Margin="10,0" HorizontalAlignment="Stretch" Background="White"></StackPanel>
+                <Image x:Name="SettingsIcon" Source="/Images/settings.png" Margin="15"></Image>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="PageTitle" Text="Reglages" TextAlignment="Right" Margin="10" FontSize="18" FontFamily="Sergoe UI"></TextBlock>
+
+            <Frame NavigationUIVisibility="Hidden" Margin="10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Name="NavigationFrame"></Frame>
+        </Grid>
+
+       
+    </Grid>
+</Window>

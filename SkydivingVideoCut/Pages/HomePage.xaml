@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -38,5 +39,6 @@
 
         <Button Padding="5" Margin="10" Grid.Column="1" Grid.Row="1" Content="Analyser" Command="{Binding AnalizeCommand}"></Button>
 
+        <Button Padding="5" Margin="10" Grid.Column="1" Grid.Row="2" Content="Couper" Command="{Binding CutCommand}"></Button>
     </Grid>
 </Page>

@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="GoProVideoPlug.UserControls.FolderPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+    <Grid x:Name="Grid">
+        <TextBox VerticalContentAlignment="Center" Padding="30,0,0,0" IsReadOnly="True" x:Name="TextBox" GotFocus="OpenFolderPicker"></TextBox>
+        <Image Source="/Images/folderIcon.png" HorizontalAlignment="Left" Margin="5"></Image>
+    </Grid>
+</UserControl>
