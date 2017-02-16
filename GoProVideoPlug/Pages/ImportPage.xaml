@@ -3,12 +3,24 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:GoProVideoPlug.Pages"
+      xmlns:userControls="clr-namespace:GoProVideoPlug.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="ImportPage">
 
-    <Grid>
-        <TextBlock Text="Import"></TextBlock>
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock TextWrapping="Wrap" FontSize="14" TextAlignment="Center" VerticalAlignment="Center" Text="Veuillez inserer un disque (Carte SD, GoPro etc..)"></TextBlock>
+        <Image Grid.Row="1" Source="/Images/USB.png"></Image>
+        <TextBlock Grid.Row="2" TextWrapping="Wrap" FontSize="14" TextAlignment="Center" VerticalAlignment="Center" Text="Ou choisir un disque déjà présent :"></TextBlock>
+        <userControls:FolderPicker Margin="30,10" Grid.Row="3" Height="30" Folder="{Binding SelectedDrive, Mode=TwoWay}"></userControls:FolderPicker>
+
     </Grid>
+
 </Page>

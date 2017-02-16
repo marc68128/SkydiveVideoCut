@@ -12,8 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GoProVideoPlug.Helpers;
+using GoProVideoPlug.IServices;
 using GoProVideoPlug.Pages;
 using GoProVideoPlug.Properties;
+using GoProVideoPlug.Services;
+using Microsoft.Practices.Unity;
 
 namespace GoProVideoPlug
 {
@@ -25,6 +29,8 @@ namespace GoProVideoPlug
         public MainWindow()
         {
             InitializeComponent();
+
+            DependencyInjectionUtil.RegisterInstance<ILoadingService>(new LoadingService());
 
             if (string.IsNullOrEmpty((string)Settings.Default["RootFolderPath"]))
                 Settings.Default["RootFolderPath"] = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);

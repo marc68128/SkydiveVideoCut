@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GoProVideoPlug.ViewModels;
 
 namespace GoProVideoPlug.Pages
 {
@@ -23,6 +24,7 @@ namespace GoProVideoPlug.Pages
         public ImportPage()
         {
             InitializeComponent();
+            DataContext = new ImportViewModel();
         }
     }
 }

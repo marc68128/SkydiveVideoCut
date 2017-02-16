@@ -5,7 +5,10 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using GoProVideoPlug.IServices;
 using GoProVideoPlug.Properties;
+using GoProVideoPlug.Services;
+using Microsoft.Practices.Unity;
 
 namespace GoProVideoPlug
 {
@@ -14,5 +17,6 @@ namespace GoProVideoPlug
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

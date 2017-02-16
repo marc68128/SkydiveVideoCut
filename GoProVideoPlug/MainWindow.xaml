@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GoProVideoPlug"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
@@ -11,8 +10,20 @@
             <ColumnDefinition Width="*" ></ColumnDefinition>
             <ColumnDefinition Width="7*" ></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
 
-        <Grid Grid.Column="0" Background="#9090ff">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="#9090ff">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="PageTitle" Grid.Column="1" Text="Reglages" TextAlignment="Right" VerticalAlignment="Center" Margin="10,0" FontSize="18" FontFamily="Sergoe UI"></TextBlock>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1" Background="#9090ff">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -36,16 +47,6 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBlock x:Name="PageTitle" Text="Reglages" TextAlignment="Right" Margin="10" FontSize="18" FontFamily="Sergoe UI"></TextBlock>
-
-            <Frame NavigationUIVisibility="Hidden" Margin="10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Name="NavigationFrame"></Frame>
-        </Grid>
-
-       
+        <Frame NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1" Margin="10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="NavigationFrame"></Frame>
     </Grid>
 </Window>
