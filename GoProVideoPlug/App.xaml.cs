@@ -17,6 +17,6 @@ namespace GoProVideoPlug
     /// </summary>
     public partial class App : Application
     {
-
+        public const int DetectionPrecision = 10;
     }
 }

@@ -26,17 +26,32 @@ namespace GoProVideoPlug
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private ILoadingService _loadingService;
         public MainWindow()
         {
             InitializeComponent();
 
-            DependencyInjectionUtil.RegisterInstance<ILoadingService>(new LoadingService());
+            _loadingService = new LoadingService();
+            DependencyInjectionUtil.RegisterInstance<ILoadingService>(_loadingService);
+
+            _loadingService.CurrentStatusChanged += (sender, s) => { Dispatcher.Invoke(() => LoadingTextBlock.Text = s); };
+            _loadingService.IsLoadingChanged += (sender, b) =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    LoadingTextBlock.Visibility = b ? Visibility.Visible : Visibility.Hidden;
+                    Loader.Visibility = b ? Visibility.Visible : Visibility.Hidden;
+                });
+            };
 
             if (string.IsNullOrEmpty((string)Settings.Default["RootFolderPath"]))
                 Settings.Default["RootFolderPath"] = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
-           
+
             NavigateToVideos(null, null);
         }
+
+        #region Navigation methods
 
         private void NavigateToVideos(object sender, MouseButtonEventArgs e)
         {
@@ -61,5 +76,7 @@ namespace GoProVideoPlug
             VideoIcon.Opacity = SdIcon.Opacity = 0.2;
             NavigationFrame.Navigate(new SettingsPage());
         }
+
+        #endregion
     }
 }

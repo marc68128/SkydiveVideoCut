@@ -5,19 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using GoProVideoPlug.Helpers;
 using GoProVideoPlug.Models;
 using GoProVideoPlug.Properties;
+using GoProVideoPlug.Services;
+using MediaToolkit;
+using MediaToolkit.Options;
 
 namespace GoProVideoPlug.ViewModels
 {
     public class ImportViewModel : BaseViewModel
     {
         private string _rootDirectory;
+        private VisionService _visionService;
 
         public ImportViewModel()
         {
             _rootDirectory = Settings.Default["RootFolderPath"].ToString();
+            _visionService = new VisionService("1d7e166bae1e4ea2ad0e0017f9cb44ab");
             Drives = DriveInfo.GetDrives().Where(d => d.DriveType == DriveType.Removable).ToList();
             ListenDrive();
         }
@@ -69,16 +75,25 @@ namespace GoProVideoPlug.ViewModels
         private void SelectedDriveChanged()
         {
 
-            var videos = IOExtensions.VideoExtensions.SelectMany(f => IOExtensions.GetFilesRecursiv(SelectedDrive, f)).Where(p => !p.StartsWith(".")).Distinct().Select(p => new Video(p));
-            var tmpDirectoryPath = Path.Combine(_rootDirectory, "tmp");
+            var videos = IOExtensions.VideoExtensions.SelectMany(f => IOExtensions.GetFilesRecursiv(SelectedDrive, f)).Where(p => !p.StartsWith(".")).Distinct().Select(p => new Video(p, LoadingService));
+            var tmpDirectoryPath = Path.Combine(_rootDirectory, "temp");
             if (Directory.Exists(tmpDirectoryPath))
                 Directory.Delete(tmpDirectoryPath, true);
             Directory.CreateDirectory(tmpDirectoryPath);
-            List<Task> copyTasks = new List<Task>();
             foreach (var video in videos)
             {
-                copyTasks.Add(video.Copy(Path.Combine(tmpDirectoryPath)));
+                video.Copy(Path.Combine(tmpDirectoryPath)).ContinueWith(async t =>
+                {
+                    var startTime = await _visionService.GetStartFrame(video);
+                    if (startTime.HasValue)
+                        await video.Cut(startTime.Value - 3, _rootDirectory);
+                });             
             }
+           
+
+
+
+
         }
 
     }

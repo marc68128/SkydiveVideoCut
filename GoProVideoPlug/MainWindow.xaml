@@ -20,7 +20,13 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock x:Name="PageTitle" Grid.Column="1" Text="Reglages" TextAlignment="Right" VerticalAlignment="Center" Margin="10,0" FontSize="18" FontFamily="Sergoe UI"></TextBlock>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ProgressBar Visibility="Hidden" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" IsIndeterminate="True" Background="#9090ff" x:Name="Loader"></ProgressBar>
+            <TextBlock Visibility="Hidden" Grid.Column="0" Grid.Row="1" x:Name="LoadingTextBlock"></TextBlock>
+            <TextBlock x:Name="PageTitle" Grid.Column="1" Grid.Row="1" Text="Reglages" TextAlignment="Right" VerticalAlignment="Center" Margin="10,0" FontSize="18" FontFamily="Sergoe UI"></TextBlock>
         </Grid>
 
         <Grid Grid.Column="0" Grid.Row="1" Background="#9090ff">

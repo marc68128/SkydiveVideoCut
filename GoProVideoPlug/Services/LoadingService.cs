@@ -39,7 +39,7 @@ namespace GoProVideoPlug.Services
             }
         }
 
-        public async void RemoveLoadingStatus(string status)
+        public void RemoveLoadingStatus(string status)
         {
             if (!LoadingStatus.Contains(status))
             {
@@ -47,35 +47,26 @@ namespace GoProVideoPlug.Services
                 return;
             }
             LoadingStatus.Remove(status);
-            TaskFactory factory = new TaskFactory();
-            await factory.StartNew(() =>
+            if (CurrentStatus == status && LoadingStatus.Any())
             {
-                if (CurrentStatus == status && LoadingStatus.Any())
-                {
-                    CurrentStatus = LoadingStatus.First();
-                }
-                else if (CurrentStatus == status && LoadingStatus.Count == 0)
-                {
-                    Debug.WriteLine("[LoadingService] Loading End");
-                    CurrentStatus = null;
-                    IsLoading = false;
-                }
-            });
+                CurrentStatus = LoadingStatus.First();
+            }
+            else if (CurrentStatus == status && LoadingStatus.Count == 0)
+            {
+                Debug.WriteLine("[LoadingService] Loading End");
+                CurrentStatus = null;
+                IsLoading = false;
+            }
         }
-        public async void AddLoadingStatus(string status)
+        public void AddLoadingStatus(string status)
         {
             LoadingStatus.Add(status);
-
-            TaskFactory factory = new TaskFactory();
-            await factory.StartNew(() =>
+            if (!IsLoading)
             {
-                if (!IsLoading)
-                {
-                    Debug.WriteLine("[LoadingService] Loading Start");
-                    IsLoading = true;
-                    CurrentStatus = status;
-                }
-            });
+                Debug.WriteLine("[LoadingService] Loading Start");
+                IsLoading = true;
+                CurrentStatus = status;
+            }
         }
 
         public event EventHandler<string> CurrentStatusChanged;
