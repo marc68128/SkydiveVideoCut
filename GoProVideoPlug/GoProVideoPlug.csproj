@@ -110,8 +110,9 @@
     <Compile Include="Helpers\IOExtensions.cs" />
     <Compile Include="IServices\ILoadingService.cs" />
     <Compile Include="Models\Video.cs" />
+    <Compile Include="Services\DriveService.cs" />
     <Compile Include="Services\LoadingService.cs" />
-    <Compile Include="Services\VisionService.cs" />
+    <Compile Include="Services\VideoService.cs" />
     <Compile Include="UserControls\FolderPicker.xaml.cs">
       <DependentUpon>FolderPicker.xaml</DependentUpon>
     </Compile>
