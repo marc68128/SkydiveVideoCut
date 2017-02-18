@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkydivingVideoCut", "Skydiv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoProVideoPlug", "GoProVideoPlug\GoProVideoPlug.csproj", "{14107F94-0AA9-4014-9E14-2111AE8B286A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyser", "Analyser\Analyser.csproj", "{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,22 @@ Global
 		{14107F94-0AA9-4014-9E14-2111AE8B286A}.Release|x64.Build.0 = Release|Any CPU
 		{14107F94-0AA9-4014-9E14-2111AE8B286A}.Release|x86.ActiveCfg = Release|Any CPU
 		{14107F94-0AA9-4014-9E14-2111AE8B286A}.Release|x86.Build.0 = Release|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Debug|ARM.Build.0 = Debug|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Debug|x64.Build.0 = Debug|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Debug|x86.Build.0 = Debug|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|ARM.ActiveCfg = Release|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|ARM.Build.0 = Release|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|x64.ActiveCfg = Release|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|x64.Build.0 = Release|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|x86.ActiveCfg = Release|Any CPU
+		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
