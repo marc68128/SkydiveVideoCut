@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoProVideoPlug", "GoProVide
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyser", "Analyser\Analyser.csproj", "{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyser2", "Analyser2\Analyser2.csproj", "{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,22 @@ Global
 		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|x64.Build.0 = Release|Any CPU
 		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|x86.ActiveCfg = Release|Any CPU
 		{CCA180CB-02B8-434B-9CC4-3EB6AA0DF15A}.Release|x86.Build.0 = Release|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Debug|ARM.Build.0 = Debug|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Debug|x64.Build.0 = Debug|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Debug|x86.Build.0 = Debug|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Release|ARM.ActiveCfg = Release|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Release|ARM.Build.0 = Release|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Release|x64.ActiveCfg = Release|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Release|x64.Build.0 = Release|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Release|x86.ActiveCfg = Release|Any CPU
+		{BCA613BB-D70C-45B6-8BCF-D3BB81C84797}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
